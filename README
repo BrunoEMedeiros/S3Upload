@@ -1,0 +1,8 @@
+# Notas
+
+O método PutObjectCommand parece não funcionar bem com tipos de string codificados como Base64,
+não consegui chegar a uma conclusão por falta de tempo para testes mais profundos se isso se da por
+algum problema de configuração na API ou mesmo no Bucket da S3, inicialmente parecia que não havia problema, 
+porem as imagens upadas em formato Base64 não conseguem ser visualizadas, acusando erro como se o arquivo estivesse corrompido.
+Por causa disso prefira ou enviar diretamente o buffer da imagem ou o Base64 e mantenha
+a função Buffer.from(string...,'base64') para que o Buffer em UTF-8 seja inserido no bucket
